@@ -11,7 +11,7 @@ gulp.task('webserver', function () {
                     'bread-line': ['全国——农业银行银联白金卡超强', '全国——农业银行银联白金卡超强'],
                     'time': '2017/11/30',
                     'service-title': '便捷服务',
-                    'service-ico': ['掌上银行', '掌上银行', '掌上银行', '掌上银行', '掌上银行', '掌上银行', '掌上银行', '掌上银行']
+                    'icon': ['掌上银行', '掌上银行', '掌上银行', '掌上银行', '掌上银行', '掌上银行', '掌上银行', '掌上银行']
                 };
                 res.setHeader('Access-Control-Allow-Origin', '*');
                 res.end(JSON.stringify(obj));

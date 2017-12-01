@@ -33,52 +33,24 @@
             <div class="bread">
                 <div class="bread-line">
                     <i class="iconfont icon-fenxiang2"></i>
-                    <p>全国——农业银行银联白金卡超强</p>
+                    <p></p>
                     <span>2017-11-30</span>
                 </div>
                 <div class="bread-line">
                     <i class="iconfont icon-fenxiang2"></i>
-                    <p>全国——农业银行银联白金卡超强</p>
+                    <p></p>
                     <span>2017-11-30</span>
                 </div>
             </div>
         </div>
         <div class="grey-line"></div>
         <div class="service">
-            <h2>便捷服务</h2>
+            <h2></h2>
             <div class="service-icon">
-                <dl>
-                    <dt></dt>
-                    <dd>掌上银载</dd>
-                </dl>
-                <dl>
-                    <dt></dt>
-                    <dd>掌上银行</dd>
-                </dl>
-                <dl>
-                    <dt></dt>
-                    <dd>掌上银载</dd>
-                </dl>
-                <dl>
-                    <dt></dt>
-                    <dd>掌行下载</dd>
-                </dl>
-                <dl>
-                    <dt></dt>
-                    <dd>掌行下载</dd>
-                </dl>
-                <dl>
-                    <dt></dt>
-                    <dd>银行下载</dd>
-                </dl>
-                <dl>
-                    <dt></dt>
-                    <dd>掌上下载</dd>
-                </dl>
-                <dl>
-                    <dt></dt>
-                    <dd>银行下载</dd>
-                </dl>
+                <!--<dl>-->
+                    <!--<dt></dt>-->
+                    <!--<dd>掌上银载</dd>-->
+                <!--</dl>-->
             </div>
         </div>
         <div class="grey-line"></div>
@@ -86,8 +58,8 @@
             <img src="images/sentence.png" alt="">
         </div>
     </div>
-    <script src="javascript/jquery.js"></script>
     <script src="swiper/swiper.min.js"></script>
+    <script src="javascript/jquery.js"></script>
     <script>
         new Swiper(".swiper-container", {
             loop: true,
@@ -120,9 +92,13 @@
             })
         }
         ajax('http://localhost:8080').then(function (data) {
-            console.log(data);
-        }).catch(function (err) {
-            console.log(err);
+            var data = JSON.parse(data);
+            $('.bread-line p').text(data['bread-line'][0]);
+            $('.bread-line span').text(data['time']);
+            $('.service h2').text(data['service-title']);
+            data['service-ico'].forEach(function (file) {
+                $('.service-icon')[0].innerHTML += '<dl><dt></dt><dd>'+file+'</dd></dl>';
+            });
         });
     </script>
 </body>
