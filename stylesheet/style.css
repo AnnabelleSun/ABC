@@ -1,0 +1,89 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    color:#000;
+    text-decoration: none;
+    font-weight: normal;
+    font-size:0.14px;
+    box-sizing: border-box;
+}
+html,
+body,
+.container{
+    width:100%;
+    height: 100%;
+    font-size: 625%;
+}
+header{
+    width:100%;
+    height: 0.5rem;
+    background-color: #fff;
+    display: flex;
+}
+.logo{
+    height: 100%;
+    padding: 0.1rem;
+}
+.logo img{
+    height: 100%;
+}
+.grey-line{
+    width: 100%;
+    height: 20px;
+    background-color: #eee;
+}
+.banner{
+    width:100%;
+}
+.banner img{
+    width:100%;
+    vertical-align: middle;
+}
+.bread-line{
+    display: flex;
+    line-height: 0.3rem;
+    padding:0 0.1rem;
+}
+.bread-line i{
+    color:#f90;
+}
+.bread-line p{
+    flex: 1;
+    padding-left: 0.1rem;
+}
+.bread-line span{
+    color:#888;
+}
+.service h2{
+    line-height: 0.4rem;
+    text-align: center;
+    font-size: 0.2rem;
+    border-bottom: 1px solid #eee;
+}
+.service-icon{
+    display: flex;
+    flex-wrap: wrap;
+}
+.service-icon dl{
+    flex: 1;
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 0.7rem;
+}
+.service-icon dl dt{
+    width:0.3rem;
+    height: 0.3rem;
+    border-radius: 50%;
+    background-color: #f90;
+    margin-bottom: 0.1rem;
+}
+.sentence{
+    padding:0.1rem;
+}
+.sentence img{
+    width:100%;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1.0">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <link rel="stylesheet" href="swiper/swiper.min.css">
+    <link rel="stylesheet" href="icon/iconfont.css">
+    <link rel="stylesheet" href="stylesheet/style.css">
+    <title>中国农业银行</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="javascript:;" class="logo-img"><img src="images/logo.png" alt=""></a>
+            </div>
+        </header>
+        <div class="banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/banner1.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/banner2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/banner3.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/banner4.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/banner5.jpg" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="bread">
+                <div class="bread-line">
+                    <i class="iconfont icon-fenxiang2"></i>
+                    <p>全国——农业银行银联白金卡超强</p>
+                    <span>2017-11-30</span>
+                </div>
+                <div class="bread-line">
+                    <i class="iconfont icon-fenxiang2"></i>
+                    <p>全国——农业银行银联白金卡超强</p>
+                    <span>2017-11-30</span>
+                </div>
+            </div>
+        </div>
+        <div class="grey-line"></div>
+        <div class="service">
+            <h2>便捷服务</h2>
+            <div class="service-icon">
+                <dl>
+                    <dt></dt>
+                    <dd>掌上银载</dd>
+                </dl>
+                <dl>
+                    <dt></dt>
+                    <dd>掌上银行</dd>
+                </dl>
+                <dl>
+                    <dt></dt>
+                    <dd>掌上银载</dd>
+                </dl>
+                <dl>
+                    <dt></dt>
+                    <dd>掌行下载</dd>
+                </dl>
+                <dl>
+                    <dt></dt>
+                    <dd>掌行下载</dd>
+                </dl>
+                <dl>
+                    <dt></dt>
+                    <dd>银行下载</dd>
+                </dl>
+                <dl>
+                    <dt></dt>
+                    <dd>掌上下载</dd>
+                </dl>
+                <dl>
+                    <dt></dt>
+                    <dd>银行下载</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="grey-line"></div>
+        <div class="sentence">
+            <img src="images/sentence.png" alt="">
+        </div>
+    </div>
+    <script src="javascript/jquery.js"></script>
+    <script src="swiper/swiper.min.js"></script>
+    <script>
+        new Swiper(".swiper-container", {
+            loop: true,
+            autoplay: 2000,
+            pagination: ".swiper-pagination",
+            paginationClickable: true,
+            autoplayDisableOnInteraction: false
+        });
+
+        function ajax(url) {
+            return new Promise(function (resolve, reject, next){
+                var xml = null;
+                var handler = function () {
+                    if (xml.readyState === 4) {
+                        if (xml.status === 200) {
+                            var obj = xml.responseText;
+                            console.log(obj);
+                            resolve(obj);
+                        }
+                    }
+                };
+                if(window.XMLHttpRequest) {
+                    xml = new XMLHttpRequest();
+                } else {
+                    xml = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+                xml.onreadystatechange = handler;
+                xml.open('get', url, true);
+                xml.send(null);
+            })
+        }
+        ajax('http://localhost:8080').then(function (data) {
+            console.log(data);
+        }).catch(function (err) {
+            console.log(err);
+        });
+    </script>
+</body>
+
+</html>
