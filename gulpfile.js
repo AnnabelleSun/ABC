@@ -1,5 +1,14 @@
 var gulp = require('gulp');
 var webserver = require('gulp-webserver');
+var Mock = require('mockjs');
+
+var obj = Mock.mock({
+    'bread-line': ['@string', '@string'],
+    'time': '@time',
+    'service-title': '@string',
+    'icon': ['@string', '@string', '@string', '@string', '@string', '@string', '@string', '@string']
+});
+console.log(obj);
 
 gulp.task('webserver', function () {
     gulp.src('.')

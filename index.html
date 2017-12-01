@@ -96,7 +96,7 @@
             $('.bread-line p').text(data['bread-line'][0]);
             $('.bread-line span').text(data['time']);
             $('.service h2').text(data['service-title']);
-            data['service-ico'].forEach(function (file) {
+            data['icon'].forEach(function (file) {
                 $('.service-icon')[0].innerHTML += '<dl><dt></dt><dd>'+file+'</dd></dl>';
             });
         });
